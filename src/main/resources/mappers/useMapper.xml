@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board.dao.UserDAO"><!--namespace를 통해 UserDAO와 연결합니다. -->
+  		
+  <select id="selectUsers" parameterType="board.dto.UserDTO"
+resultType="board.dto.UserDTO"><!-- selectUsers()메서드를 호출하면 실행할 SELECT문이며, 
+						UserDTO 객체를 파라미터로 받아, UserDTO객체를 반환합니다.-->
+  select user_name,password,user_id from user_info
+ 
+/*select 1 as id,'김건' as username,1234 as password from dual*/
+  </select>
+  
+    <select id="selectUsersPost" parameterType="Map"
+resultType="Map"><!-- selectUsers()메서드를 호출하면 실행할 SELECT문이며, 
+						UserDTO 객체를 파라미터로 받아, UserDTO객체를 반환합니다.-->
+  select user_name,password,user_id from user_info
+  where user_id= #{user_id}
+  and password = #{user_password}
+ 
+/*select 1 as id,'김건' as username,1234 as password from dual*/
+  </select>
+
+</mapper>
