@@ -50,7 +50,8 @@ public class TestController {
 	  @PostMapping("/userInfo") 
 	  public List<Map> userInfo(@RequestBody Map<String,Object> param) throws Exception { //query String으로 county를 받도록 설정
 	  
-		  System.out.println(param); List<Map> dd = userService.usersPost(param);
+		  System.out.println(param); 
+		  List<Map> dd = userService.usersPost(param);
 		  return dd; 
 	  }
 	 
