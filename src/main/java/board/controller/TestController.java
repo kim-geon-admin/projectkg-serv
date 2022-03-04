@@ -46,8 +46,8 @@ public class TestController {
 	}
 
 	
-	  @RequestMapping("/userInfo")
-	  @PostMapping("/userInfo") 
+	  @RequestMapping("/user/userInfo")
+	  @PostMapping("/user/userInfo") 
 	  public List<Map> userInfo(@RequestBody Map<String,Object> param) throws Exception { //query String으로 county를 받도록 설정
 	  
 		  System.out.println(param); 
